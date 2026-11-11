@@ -10,12 +10,8 @@ int main() {
 
     int n;
     long long k;
-    if (!(cin >> n >> k)) return 0;
+    cin >> n >> k;
 
-    if (n <= 0) {
-        cout << 0 << "\n";
-        return 0;
-    }
 
     vector<long long> a(n);
     for (int i = 0; i < n; i++) {
