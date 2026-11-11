@@ -32,12 +32,12 @@ int main() {
 
     vector<int> maxright(n, 0);
     int R = n - 1;
-    for (int L_ptr = n - 1; L_ptr >= 0; L_ptr--) {
-        while (a[R] - a[L_ptr] > k) {
+    for (int right = n - 1; right >= 0; right--) {
+        while (a[R] - a[right] > k) {
             R--;
         }
-        int current_size = R - L_ptr + 1;
-        maxright[L_ptr] = (L_ptr == n - 1) ? current_size : max(maxright[L_ptr + 1], current_size);
+        int current_size = R - right + 1;
+        maxright[right] = (right == n - 1) ? current_size : max(maxright[right + 1], current_size);
     }
 
     int totaldiamonds = maxleft[n - 1];
