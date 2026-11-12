@@ -3,13 +3,12 @@ using namespace std;
 
 
 class KthLargest {
-private:
-    int k;
-    priority_queue<int, vector<int>, greater<int>> minHeap;
 
 public:
+int limit;
+    priority_queue<int, vector<int>, greater<int>> minHeap;
     KthLargest(int k, vector<int>& nums) {
-        this->k = k;
+        limit = k;
         for (int num : nums) {
             add(num);
         }
@@ -17,7 +16,7 @@ public:
 
     int add(int val) {
         minHeap.push(val);
-        if (minHeap.size() > k) {
+        if (minHeap.size() > limit) {
             minHeap.pop();
         }
         return minHeap.top();
